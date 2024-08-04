@@ -1,0 +1,89 @@
+### Create product
+
+POST http://localhost:8080/api/products
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": "A004",
+  "name": "Asus Vivobook 19",
+  "price": 6500000,
+  "quantity": 5
+}
+
+### Create product invalid
+
+POST http://localhost:8080/api/products
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+"id": "",
+"name": "",
+"price": 0,
+"quantity": -1
+}
+
+### Get product
+GET http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Accept: application/json
+
+### Get product not found
+
+GET http://localhost:8080/api/products/SALAH
+X-Api-Key: SECRET
+Accept: application/json
+
+### Update product
+PUT http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Asus Vivobook 18",
+  "price": 8500000,
+  "quantity": 65
+}
+
+### Update product not found
+PUT http://localhost:8080/api/products/SALAH
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Asus Vivobook 18",
+  "price": 8500000,
+  "quantity": 65
+}
+
+### Update product invalid
+PUT http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "price": 0,
+  "quantity": -1
+}
+
+### Delete product
+DELETE http://localhost:8080/api/products/A001
+X-Api-Key: SECRET
+Accept: application/json
+
+### List products
+GET http://localhost:8080/api/products
+X-Api-Key: SECRET
+Accept: application/json
+
+### List products with parameter
+GET http://localhost:8080/api/products?size=2&page=1
+X-Api-Key: SECRET
+Accept: application/json
